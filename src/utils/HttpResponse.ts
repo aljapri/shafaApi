@@ -53,6 +53,7 @@ class HttpResponse<T> {
 
     // Static method for 500 Internal Server Error response
     static InternalServerError(): any {
+        
         return new AppError("something went wrong", 500);
     }
 

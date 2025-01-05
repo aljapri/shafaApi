@@ -17,10 +17,8 @@ export default class MedicalFacilityCreationHandler extends AccountCreationBase 
       
       // Step 1: Create authentication
       const auth = await this.createAuth(body.email,body.password,"medicalFacility" ,session);
-      
       // Step 2: Create location
       const location = await this.locationService.createLocation(body.location, session);
-
       const medicalFacility = await this.medicalFacilityService.createMedicalFacility(
         body,
         auth._id,
@@ -29,7 +27,6 @@ export default class MedicalFacilityCreationHandler extends AccountCreationBase 
       );
       // Step 3: Create subscription
       const subscription = await this.subscriptionService.createSubscription(body.subscriptionPlanId,auth._id, session);
-      
       // Step 4: Create medical facility
       return medicalFacility
     });

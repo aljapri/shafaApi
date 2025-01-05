@@ -13,8 +13,8 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());  // This will automatically parse incoming JSON data into `req.body`
-
-const db = DB.getInstance('mongodb://localhost:27017/test?replicaSet=rs0');
+//mongodb+srv://gamer2mohamad:12er56ui90@cluster0.zvvocvd.mongodb.net/uok-dev
+const db = DB.getInstance('mongodb+srv://gamer2mohamad:12er56ui90@cluster0.zvvocvd.mongodb.net/shafa');
 db.connect();
 
 app.use("/api/v1/medical-facilities",medicalFacilityRoutes);
