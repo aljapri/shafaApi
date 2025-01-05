@@ -9,7 +9,7 @@ class AppointmentCreation implements IAppointmentCommand{
   private medicalFacilityId: Types.ObjectId;
   private doctorId: Types.ObjectId;
   private patientId: Types.ObjectId;
-  private date: string;
+  private date: Date;
   private time: string;
 
   /**
@@ -24,7 +24,7 @@ class AppointmentCreation implements IAppointmentCommand{
     medicalFacilityId: Types.ObjectId,
     doctorId: Types.ObjectId,
     patientId: Types.ObjectId,
-    date: string,
+    date: Date,
     time: string
   ) {
     this.medicalFacilityId = medicalFacilityId;

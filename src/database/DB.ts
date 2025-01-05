@@ -18,7 +18,8 @@ class DB {
     public async connect(): Promise<void> {
         try {
             await mongoose.connect(this.url, {
-                autoCreate: true, // Automatically create collections if they don't exist
+                useNewUrlParser: true,
+                useUnifiedTopology: true,
             });
             console.log('MongoDB connected');
         } catch (error) {

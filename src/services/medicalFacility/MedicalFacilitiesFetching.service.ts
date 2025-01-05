@@ -8,8 +8,12 @@ import { MedicalFacilitySearchQuery } from '../../utils/MedicalFacilitySearchQue
 
 export class MedicalFacilitiesFetching extends BaseFetchStrategy implements IMedicalFacilityFetchStrategy {
   async fetch(req: Request|any): Promise<any> {
-    const searchQuery = MedicalFacilitySearchQuery(req.query.search);
-    let baseQuery = MedicalFacility.find(searchQuery);
+    console.log("sex");
+    const searchTerms = req.search.split(' ').map((term:any) => new RegExp(term, 'i'));
+
+    let baseQuery = MedicalFacility.find({$or: [
+      { name: { $in: searchTerms } }
+    ]});
 
     return await this.applyAPIFeatures(baseQuery, req.query);
   }

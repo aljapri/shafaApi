@@ -14,7 +14,7 @@ const app = express();
 
 app.use(express.json());  // This will automatically parse incoming JSON data into `req.body`
 //mongodb+srv://gamer2mohamad:12er56ui90@cluster0.zvvocvd.mongodb.net/uok-dev
-const db = DB.getInstance('mongodb+srv://gamer2mohamad:12er56ui90@cluster0.zvvocvd.mongodb.net/shafa');
+const db = DB.getInstance('mongodb://gamer2mohamad:12er56ui90@ac-1mql0eh-shard-00-00.zvvocvd.mongodb.net:27017,ac-1mql0eh-shard-00-02.zvvocvd.mongodb.net:27017,ac-1mql0eh-shard-00-01.zvvocvd.mongodb.net:27017/shafa?authSource=admin&replicaSet=atlas-411uf2-shard-0&ssl=true');
 db.connect();
 
 app.use("/api/v1/medical-facilities",medicalFacilityRoutes);
