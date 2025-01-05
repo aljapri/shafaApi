@@ -25,7 +25,6 @@ import { FeedbackCommandInvoker } from "../command/FeedbackCommandInvoker copy";
 import CommentCreation from "../services/comment/CommentCreation";
 import CommentDeleting from "../services/comment/CommentDeleting";
 import CommentUpdateing from "../services/comment/CommentUpdateing";
-import { CommentsFetching } from "../services/comment/CommentsFetchingByPatient";
 import { CommentFetchContext } from "../strategy/CommentFetchContext";
 
 
